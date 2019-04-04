@@ -26,7 +26,7 @@ public class HillClimb {
     while (fitness > 0 ) {
       iterations++;
       boolean changed = false;
-      for(Pair<Integer, Integer> p: this.getNeigborhood(x, y)) {
+      for(Pair<Integer, Integer> p: this.getNeighborhood(x, y)) {
         int newFitness = this.getFitness(p.getKey(), p.getValue());
         if (newFitness < fitness) {
           x = p.getKey();
@@ -57,7 +57,7 @@ public class HillClimb {
     return fitness;
   }
 
-  private ArrayList<Pair<Integer, Integer>> getNeigborhood(int x, int y) {
+  private ArrayList<Pair<Integer, Integer>> getNeighborhood(int x, int y) {
     ArrayList<Integer> helperList = new ArrayList<Integer>(Arrays.asList(-1, 0, 1));
     ArrayList<Pair<Integer, Integer>> neighborList = new ArrayList<Pair<Integer, Integer>>();
     for (int i: helperList) {
